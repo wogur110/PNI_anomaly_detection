@@ -38,6 +38,9 @@ pip install scikit-learn==0.24.2
 pip install scikit-image==0.19.2
 pip install pymp-pypi==0.5.0
 pip install numpngw==0.1.2
+pip install matplotlib==3.7.2
+pip install timm==0.9.5
+pip install 
 ```
 The available version of torch and torchvision might be different depending on hardware settings.
 ```bash
