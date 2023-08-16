@@ -102,3 +102,6 @@ Finally, **"analysis_code/analysis_amap.py"** analysis anomaly map from "./resul
 Add argument "--visualize" to visualize the anomaly map on "./result/ensemble_ravel/viz" repository.
 If you want to find misclassified images with the trained model, add argument "--calc_misclassified_sample" and indices of false positive samples and false negative samples will be presented on "./result/ensemble_ravel/misclassified_sample_list.csv"
 In addition, add "--calc_pro" argument to additionally calculate the AUPRO score. The result will be presented on "./result/ensemble_ravel/score_result.csv".
+
+## Refinement model
+[model link](https://drive.google.com/drive/folders/1SMnRU6gQqsWOWCuKi2yiFjrpQbsztN0T)
