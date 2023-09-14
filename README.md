@@ -111,6 +111,7 @@ To refine the calculated anomaly map with the refinement model, execute "evaluat
 We provide the anomaly map result of the proposed PNI model (with refinement) in the MVTec AD benchmark. The below links are the single model (WideResNet101-2) result and ensemble model (WideResNet101-2, ResNext101_32x8d, and DenseNet201), respectively.
 
 [Anomaly map from single model link](https://drive.google.com/drive/folders/1Tr4RHY9HhczPfusGdNIOb8bnzok2Md68?usp=drive_link)
+
 [Anomaly map from ensemble model link](https://drive.google.com/drive/folders/1Fs5C106B4RgXv-vktCaKcWpRSzxpi1Yc?usp=drive_link)
 
 The single model can achieve up to **99.56%** and **98.98%** AUROC scores in anomaly detection and localization and **96.05%** AUPRO score for the MVTec AD benchmark.
