@@ -274,6 +274,43 @@ class Scale(object):
         else:
             return img.resize(size[::-1], interpolation)
 
+class Normalize(object):
+    def __init__(self, mean, std):
+        self.mean = mean
+        self.std = std
+
+    def __call__(self, sample):
+        """
+        Args:
+            tensor (Tensor): Tensor image of size (C, H, W) to be normalized.
+        Returns:
+            Tensor: Normalized image.
+        """
+        image_in, patch_mid, image_gt, patch_gt \
+            = sample['image_in'], sample['patch_mid'], sample['image_gt'], sample['patch_gt']
+
+        #image_original = image.clone()
+        image_in = self.normalize(image_in, self.mean, self.std)
+        image_gt = self.normalize(image_gt, self.mean, self.std)
+
+        return {'image_in': image_in, 'patch_mid': patch_mid, 'image_gt': image_gt, 'patch_gt': patch_gt}
+
+    def normalize(self, tensor, mean, std):
+        """Normalize a tensor image with mean and standard deviation.
+        See ``Normalize`` for more details.
+        Args:
+            tensor (Tensor): Tensor image of size (C, H, W) to be normalized.
+            mean (sequence): Sequence of means for R, G, B channels respecitvely.
+            std (sequence): Sequence of standard deviations for R, G, B channels
+                respecitvely.
+        Returns:
+            Tensor: Normalized image.
+        """
+
+        for t, m, s in zip(tensor, mean, std):
+            t.sub_(m).div_(s)
+        return tensor
+
 class RandomRotate(object):
     """Random rotation of the image from -angle to angle (in degrees)
     This is useful for dataAugmentation, especially for geometric problems such as FlowEstimation
