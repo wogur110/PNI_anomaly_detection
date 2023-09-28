@@ -3,11 +3,11 @@ import torch.nn.functional as F
 import numpy as np
 
 def compute_3losses(depth_pred_for_loss, depth_gt_for_loss, n=1):
-    l_depth, l_depth_dx, l_depth_dy = loss_for_derivative_mini_B(depth_pred_for_loss, depth_gt_for_loss, n=n, one_metric=False)
+    l_depth, l_depth_dx, l_depth_dy = loss_for_derivative_mini(depth_pred_for_loss, depth_gt_for_loss, n=n, one_metric=False)
 
     return l_depth, l_depth_dx, l_depth_dy
 
-def loss_for_derivative_mini_B(pred, gt, n=1, one_metric=False):
+def loss_for_derivative_mini(pred, gt, n=1, one_metric=False):
     # estimate loss of derivative
     #   d, dx, dy, d_norm, dx2, dxy, dy2, dx_norm, dy_norm
 

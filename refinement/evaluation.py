@@ -45,4 +45,3 @@ def run(args):
         print("pixel AUPRO: ", pixel_aupro)
         print("max F1: ", max_F1)
         print('---------------------------------------------------------')
-        a=0
